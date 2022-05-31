@@ -201,4 +201,8 @@ class LanguageAr extends Languages {
   @override
   // TODO: implement kChooseDate
   String get kSave => 'حفظ';
+
+  @override
+  // TODO: implement kContinue
+  String get kContinue => 'إستمر';
 }

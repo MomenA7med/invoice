@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:invoice/constants/singleton/UserSingleton.dart';
+import 'package:invoice/intro/splash_screen.dart';
 import 'package:invoice/intro/welcome_screen.dart';
 import 'package:invoice/utils/Localization/LanguageHelper.dart';
+import 'package:invoice/views/home_layout/home_layout.dart';
+import 'package:invoice/views/setting/change_language.dart';
+import 'package:invoice/views/setting/vat_screen.dart';
 
 import 'constants/constants.dart';
 import 'utils/Localization/AppLocalizationsDelegate.dart';
 
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await UserSingleton().initialize();
   runApp(MyApp());
 }
 
@@ -33,6 +41,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    UserSingleton().getStoredUser();
   }
 
   @override
@@ -47,15 +56,18 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: Strings.kAppName,
-      theme: kLightTheme,
-      home: WelcomeScreen(),
-      locale: _locale,
-      supportedLocales: supportedLocales,
-      localizationsDelegates: localizationsDelegates,
-      localeResolutionCallback: localeResolutionCallback,
+    return ScreenUtilInit(
+      designSize: Size(375,812),
+      builder:() => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: Strings.kAppName,
+        theme: kLightTheme,
+        home: SplashScreen(),
+        locale: _locale,
+        supportedLocales: supportedLocales,
+        localizationsDelegates: localizationsDelegates,
+        localeResolutionCallback: localeResolutionCallback,
+      ),
     );
   }
 

@@ -3,7 +3,7 @@ part of 'constants.dart';
 const int kApiResponseLimit = 9;
 const double kVatPercentage = 0.15;
 const String kGoogleUrl = "google.com";
-const String kBaseUrl = "perlaksa.com";
+const String kBaseUrl = "inpaid.ml";
 // const String kBaseUrl = "perla-ecommerce.herokuapp.com";
 const String kUrl = "https://$kBaseUrl/";
 const String kBaseUrlApi = kUrl + "api/v1/";
@@ -12,12 +12,22 @@ const String kSliderImagesApi = kUrl + "imgs/slider/";
 const String kCategoryImagesApi = kUrl + "imgs/category/";
 const String kProductImagesApi = kUrl + "imgs/product/";
 const String kDefaultImageApi = kProductImagesApi + "default.jpg";
-const String kInquiriesApi = kBaseUrlApi + "inquiry/all-user-inquiries";
+const String kGetProducts = kUrl + "product/dashboard-get-for-one-company/";
+const String kGetClients = kUrl + "client/dashboard-get-for-one-company/";
+const String kGetInvoices = kUrl + "invoice?page=1&limit=9";
+const String kAddClient = kUrl + "client";
+const String kAddProduct = kUrl + "product";
+const String kCreateInvoice = kUrl + "invoice";
+const String kGetInvoiceId = kUrl + "invoice";
+const String kDeleteClient = kUrl + "client/";
+const String kDeleteProduct = kUrl + "product/";
+const String kDeleteInvoice = kUrl + "invoice/";
+
 const String kPerlaPoliciesApi = kBaseUrlApi + "policy";
 const String kFacebookLoginApi = kBaseUrlApi + "auth/facebook/login";
 const String kGoogleLoginApi = kBaseUrlApi + "auth/google/login";
-const String kLoginApi = kBaseUrlApi + "user/login";
-const String kSignUpApi = kBaseUrlApi + "user/signup";
+const String kLoginApi = kUrl + "auth/login";
+const String kSignUpApi = kUrl + "auth/signup";
 const String kGetUser = kBaseUrlApi + "user/get-user";
 const String kSliderApi = kBaseUrlApi + "slider";
 const String kSearchApi = kBaseUrlApi + "product/search";
@@ -36,7 +46,7 @@ String kUpdateUserApi(String userId) {
   return kBaseUrlApi + "user/$userId";
 }
 
-String kGetUserCity(String cityId){
+String kGetUserCity(String cityId) {
   return kBaseUrlApi + "city/$cityId";
 }
 
@@ -88,7 +98,7 @@ String kOrdersApi({int? page}) {
   return kBaseUrlApi + "user/get/orders?page=${page ?? 1}";
 }
 
-String kMakeOrderApi(){
+String kMakeOrderApi() {
   return kBaseUrlApi + "order";
 }
 
@@ -125,6 +135,6 @@ String kGetCompetitionPointsApi(String competitionId) {
   return kBaseUrlApi + "user/competition/" + competitionId;
 }
 
-String kGetUserImage(String image){
+String kGetUserImage(String image) {
   return kUrl + "imgs/user/" + image;
 }

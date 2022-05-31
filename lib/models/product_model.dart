@@ -2,10 +2,12 @@ class ProductModel {
   String productName;
   String productPrice;
   String productCost;
-  bool texable;
+  bool taxable;
   String amount;
+  String image;
 
 
-  ProductModel(this.productName,this.productPrice,this.productCost,this.texable,this.amount);
+  ProductModel({required this.productName,required this.productPrice,
+    required this.productCost,required this.taxable,required this.amount,required this.image});
   
 }

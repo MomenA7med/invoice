@@ -64,4 +64,5 @@ abstract class Languages {
   String get kNotes;
   String get kChooseDate;
   String get kSave;
+  String get kContinue;
 }

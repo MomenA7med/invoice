@@ -16,7 +16,7 @@ class LanguageHelper {
     SharedPreferences _prefs = await SharedPreferences.getInstance();
     String languageCode =
         _prefs.getString(Strings.kSelectedLanguageCodePrefs) ??
-            Strings.kArabicLanguageCode;
+            Strings.kEnglishLanguageCode;
     _isEnglish = languageCode == Strings.kEnglishLanguageCode ? true : false;
     return _locale(languageCode);
   }

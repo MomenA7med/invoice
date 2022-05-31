@@ -8,7 +8,7 @@ class LanguageEn extends Languages {
   String get kHaveAccount => 'Do you have account ? ';
 
   @override
-  String get kLogin => 'login now';
+  String get kLogin => 'Login';
 
   @override
   String get kStartNow => 'start now';
@@ -35,7 +35,7 @@ class LanguageEn extends Languages {
   String get kWelcome => 'Welcome Back';
 
   @override
-  String get kCreateAccount => 'Create Account';
+  String get kCreateAccount => 'Create an account';
 
   @override
   String get kRestorePass => 'Restore Password';
@@ -59,7 +59,7 @@ class LanguageEn extends Languages {
   String get kItem => 'Items';
 
   @override
-  String get kDescription => 'description';
+  String get kDescription => 'title';
 
   @override
   String get kQuantity =>  'quantity';
@@ -200,4 +200,8 @@ class LanguageEn extends Languages {
   @override
   // TODO: implement kChooseDate
   String get kSave => 'save';
+
+  @override
+  // TODO: implement kContinue
+  String get kContinue => 'Continue';
 }
